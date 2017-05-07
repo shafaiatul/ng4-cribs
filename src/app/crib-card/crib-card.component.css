@@ -1,0 +1,11 @@
+.card-image > span {
+    background: #000;
+    opacity: 0.8;
+}
+.card {
+    min-height: 454px;
+}
+.btn {
+    background: #90a4ae;
+    padding: 0 10px;
+}

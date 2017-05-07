@@ -1,0 +1,116 @@
+<div class="col s12">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <div class="chip">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          Add Listing
+        </div>
+
+        <br><br>
+        <!--Form Start-->
+        <form #newCribForm="ngForm" (ngSubmit)="onCribSubmit(newCribForm.value)">
+          <div class="row">
+            <div class="input-field col s4">
+              <i class="material-icons prefix">store</i>
+              <input
+                id="address"
+                name="address"
+                type="text"
+                class="validate"
+                ngModel
+                required
+                >
+              <label for="address">Address</label>
+            </div>
+            <div class="input-field col s4">
+              <i class="material-icons prefix">attach_money</i>
+              <input
+                id="price"
+                name="price"
+                type="text"
+                class="validate"
+                ngModel
+                required
+                >
+              <label for="price">Price</label>
+            </div>
+            <div class="input-field col s4">
+              <i class="material-icons prefix">home</i>
+
+              <select id="type" name="type" ngModel materialize="material_select" [materializeSelectOptions]="propertyTypes" required>
+                <option *ngFor="let type of propertyTypes" [value]="type">{{type}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+
+
+            <div class="input-field col s4">
+              <i class="material-icons prefix">create</i>
+
+              <input
+                id="bedrooms"
+                name="bedrooms"
+                type="text"
+                class="validate"
+                ngModel
+                required
+                >
+              <label for="bedrooms">Bedroom</label>
+            </div>
+            <div class="input-field col s4">
+              <i class="material-icons prefix">create</i>
+              <input
+                id="bathrooms"
+                name="bathrooms"
+                type="text"
+                class="validate"
+                ngModel
+                required
+                >
+              <label for="bathrooms">Bathroom</label>
+            </div>
+            <div class="input-field col s4">
+              <i class="material-icons prefix">create</i>
+              <input
+                id="area"
+                name="area"
+                type="text"
+                class="validate"
+                ngModel
+                required
+                >
+              <label for="area">Area in Sqft</label>
+            </div>
+          </div>
+
+          <div class="row">
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">description</i>
+
+                    <textarea id="description" name="description" ngModel class="materialize-textarea" required></textarea>
+                    <label for="description">Description</label>
+
+                </div>
+          </div>
+
+          <div class="center-align">
+            <button class="btn waves-effect waves-light" type="submit" ng-show="addListing">
+              <i class="material-icons right">send</i>
+                Add listing
+              </button>
+          </div>
+
+
+        </form>
+        <!--Form End-->
+
+      </span>
+
+    </div>
+
+  </div>
+</div>

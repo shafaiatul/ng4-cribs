@@ -1,0 +1,47 @@
+<div class="card">
+	<div class="card-image">
+		<img src="assets/images/{{crib.image}}.jpg">
+		<span class="card-title">{{crib.address}}</span>
+	</div>
+	<div class="card-content">
+		<div *ngIf="!crib.showDetails">
+			<div class="chip">
+				<i class="fa fa-home" aria-hidden="true"></i> {{crib.type}}&nbsp;
+			</div>
+
+			<span class="card-title">{{crib.price | currency:'USD':true}}</span>
+			<p>{{crib.description}}</p>
+
+			<hr>
+
+			<button class="btn" *ngIf="!crib.showDetails" (click)="crib.showDetails = !crib.showDetails">
+				<i class="fa fa-info" aria-hidden="true"></i>&nbsp;
+				Details
+			</button>
+
+		</div>
+
+		<div *ngIf="crib.showDetails">
+			<div class="chip">
+				<i class="fa fa-check-square-o" aria-hidden="true"></i> Beds: {{crib.bedrooms}}&nbsp;
+			</div>
+			<div class="chip">
+				<i class="fa fa-check-square-o" aria-hidden="true"></i> Baths: {{crib.bathrooms}}&nbsp;
+			</div>
+			<div class="chip">
+				<i class="fa fa-check-square-o" aria-hidden="true"></i> Sqfts: {{crib.area}}&nbsp;
+			</div>
+
+			<hr>
+
+			<button class="btn" *ngIf="crib.showDetails" (click)="crib.showDetails = !crib.showDetails ">
+				<i class="fa fa-times" aria-hidden="true"></i>&nbsp;
+				Close
+			</button>
+
+		</div>
+
+
+	</div>
+
+</div>
